@@ -72,10 +72,6 @@ gulp.task('default', function (done) {
         message: 'What is the author email?',
         default: defaults.authorEmail
     }, {
-        name: 'userName',
-        message: 'What is the github username?',
-        default: defaults.userName
-    }, {
 	name: 'zipFilename',
 	message: 'What is the name of the zip file?',
 	default: defaults.zipFilename

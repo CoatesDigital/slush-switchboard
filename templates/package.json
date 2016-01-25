@@ -1,5 +1,11 @@
 {
-	"name":"<%= appNameSlug %>",
+	"name":"<%= appName %>",
+	"description":"<%= appDescription %>",
+	"version":"<%= appVersion %>",
+	"author": {
+		"name":"<%= authorName %>",
+		"email":"<%= authorEmail %>"
+	},
 	"devDependencies": {
 		"gulp": "3.9.*",
 		"gulp-sass": "2.0.*",

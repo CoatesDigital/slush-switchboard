@@ -33,9 +33,5 @@ Slush does not contain anything "out of the box", except the ability to locate i
 
 To find out more about Slush, check out the [documentation](https://github.com/slushjs/slush).
 
-## Contributing
-
-See the [CONTRIBUTING Guidelines](https://github.com/shannon/slush-switchboard/blob/master/CONTRIBUTING.md)
-
 ## Support
 If you have any problem or suggestion please open an issue [here](https://github.com/shannon/slush-switchboard/issues).
