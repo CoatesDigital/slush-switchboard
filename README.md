@@ -1,4 +1,4 @@
-# Slush Switchboard [![Build Status](https://secure.travis-ci.org/shannon/slush-switchboard.png?branch=master)](https://travis-ci.org/shannon/slush-switchboard) [![NPM version](https://badge-me.herokuapp.com/api/npm/slush-switchboard.png)](http://badges.enytc.com/for/npm/slush-switchboard)
+# Slush Switchboard
 
 > A slush generator to scaffold a switchboard project.
 
