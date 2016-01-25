@@ -46,7 +46,8 @@ var defaults = (function () {
         appName: workingDirName,
         userName: osUserName || format(user.name || ''),
         authorName: user.name || '',
-        authorEmail: user.email || ''
+        authorEmail: user.email || '',
+	zipFilename: 'content.zip'
     };
 })();
 
@@ -74,6 +75,10 @@ gulp.task('default', function (done) {
         name: 'userName',
         message: 'What is the github username?',
         default: defaults.userName
+    }, {
+	name: 'zipFilename',
+	message: 'What is the name of the zip file?',
+	default: defaults.zipFilename
     }, {
         type: 'confirm',
         name: 'moveon',
