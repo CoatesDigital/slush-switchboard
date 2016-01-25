@@ -8,7 +8,7 @@
 Install `slush-switchboard` globally:
 
 ```bash
-$ npm install -g slush-switchboard
+$ npm install -g slush shannonarcher/slush-switchboard.git
 ```
 
 ### Usage
