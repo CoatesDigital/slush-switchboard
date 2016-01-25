@@ -1,0 +1,18 @@
+$content-element-gutter: 20px !default;
+$content-list-indent: 30px !default;
+
+.content {
+	> .content-element, > h1, > h2, > h3, > h4, > h5, > h6, > hgroup, > p, > ul, > ol, > table, > pre, > figure,
+	figcaption, > iframe, > object, > embed, > form {
+		margin-bottom: $content-element-gutter;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	// Make lists list things again.
+	ul, ol { padding-left: $content-list-indent; }
+	ul { list-style: disc; }
+	ol { list-style: decimal; }
+}

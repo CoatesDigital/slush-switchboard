@@ -1,0 +1,7 @@
+{
+	"name": "Content Skeleton",
+	"authors": ["Shannon Archer <shannon.archer@coatesdigital.com.au>"],
+	"dependencies": {
+		"content-framework": "git@github.com:CoatesDigital/content-framework.git#master"
+	}
+}

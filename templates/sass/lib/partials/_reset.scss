@@ -1,0 +1,83 @@
+// Element reference used:
+// https://developer.mozilla.org/en/docs/Web/HTML/Element
+
+// Remove any margin, padding.
+html, address, article, body, footer, header, h1, h2, h3, h4, h5, h6, hgroup, nav,
+section, blockquote, dd, div, dl, dt, figcaption, figure, hr, li, main, ol, p, pre, ul,
+img, video, embed, iframe, object, del, ins, caption, col, colgroup, table, tbody, td,
+tfoot, th, thead, tr, button, datalist, fieldset, form, input, keygen, label, legend,
+meter, optgroup, option, output, progress, select, textarea, details, dialog, menu,
+menuitem, summary {
+	padding: 0;
+	margin: 0;
+}
+
+html {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+	-webkit-box-sizing: inherit;
+	-moz-box-sizing: inherit;
+}
+
+body {
+	font: 16px sans-serif;
+}
+
+code, pre {
+	font-family: 16px monospace;
+}
+
+h1 { font-size: 220%; }
+h2 { font-size: 200%; }
+h3 { font-size: 180%; }
+h4 { font-size: 160%; }
+h5 { font-size: 140%; }
+h6 { font-size: 120%; }
+
+// Declare the following as block elements.
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav,
+section, summary {
+	display: block;
+}
+
+img {
+	border: none;
+	max-width: 100%;
+	height: auto;
+}
+
+// Make interactive things look interactive.
+a, button, select, input[type='button'], input[type='submit'], input[type='checkbox'],
+input[type='radio'], .interactive {
+	cursor: pointer;
+}
+
+// Who uses lists to list things anymore?
+ol, ul {
+	list-style: none;
+}
+
+// Who resizes textareas horizontally?
+textarea {
+	resize: vertical;
+}
+
+label {
+	display: block;
+}
+
+input, select, textarea, button {
+	font: inherit;
+	outline: none;
+	border: none;
+}
+
+button {
+	color: inherit;
+	background: none;
+}
