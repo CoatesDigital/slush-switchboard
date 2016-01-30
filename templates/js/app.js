@@ -1,5 +1,5 @@
 // Configure Switchboard
-SB.config({
+SB.setup({
 	url: '',
 	location: '',
 	content: '',
