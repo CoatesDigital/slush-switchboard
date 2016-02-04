@@ -1,11 +1,7 @@
 // Configure Switchboard
 SB.setup({
 	url: '',
-	location: '',
-	content: '',
 	sources: [
-		{ name: '', filename:'' },
-		{ name: '', filename:'' },
 		{ name: '', filename:'' }
 	],
 	success: init

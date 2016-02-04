@@ -11,12 +11,12 @@ gulp.task('sass', function() {
 
 gulp.task('js', function() {
 	gulp.src('./js/**/*.js')
-		.pipe(uglify())
+		// .pipe(uglify())
 		.pipe(gulp.dest('./public/js'));
 });
 
 gulp.task('zip', function () {
-	gulp.src('public/*')
+	gulp.src('public/**/*')
 	    .pipe(zip('<%= zipFilename %>'))
 	    .pipe(gulp.dest('./'));
 });
@@ -28,4 +28,4 @@ gulp.task('watch', function() {
 });
 
 gulp.task('prod', ['sass', 'js']);
-gulp.task('default', ['prod', 'watch']);
+gulp.task('default', ['prod', 'watch', 'zip']);
