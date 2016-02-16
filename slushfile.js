@@ -47,7 +47,9 @@ var defaults = (function () {
         userName: osUserName || format(user.name || ''),
         authorName: user.name || '',
         authorEmail: user.email || '',
-	zipFilename: 'content.zip'
+	      zipFilename: workingDirName + '.zip',
+        contentWidth: 1920,
+        contentHeight: 1080
     };
 })();
 
@@ -57,13 +59,6 @@ gulp.task('default', function (done) {
         message: 'What is the name of your project?',
         default: defaults.appName
     }, {
-        name: 'appDescription',
-        message: 'What is the description?'
-    }, {
-        name: 'appVersion',
-        message: 'What is the version of your project?',
-        default: '0.1.0'
-    }, {
         name: 'authorName',
         message: 'What is the author name?',
         default: defaults.authorName
@@ -72,9 +67,17 @@ gulp.task('default', function (done) {
         message: 'What is the author email?',
         default: defaults.authorEmail
     }, {
-	name: 'zipFilename',
-	message: 'What is the name of the zip file?',
-	default: defaults.zipFilename
+        name: 'contentWidth',
+        message: 'What is the content width?',
+        default: defaults.contentWidth
+    }, {
+        name: 'contentHeight',
+        message: 'What is the content width?',
+        default: defaults.contentHeight
+    }, {
+      	name: 'zipFilename',
+      	message: 'What is the name of the zip file?',
+      	default: defaults.zipFilename
     }, {
         type: 'confirm',
         name: 'moveon',
