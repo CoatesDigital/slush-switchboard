@@ -67,8 +67,8 @@ gulp.task('serve', function () {
 	});
 
 	gulp.watch([
-		"public/**/*.html",
-		"public/**/*.js"
+		"./public/index.html",
+		"./public/js/*.js",
 	]).on('change', browserSync.reload);
 });
 
