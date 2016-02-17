@@ -7,6 +7,11 @@ var clean = require('gulp-clean');
 
 var browserSync = require('browser-sync').create();
 
+gulp.task('copy', function () {
+	return gulp.src('./**/*')
+					.pipe(gulp.dest('./public/dev'));
+});
+
 gulp.task('sass', function() {
 	return gulp.src('./sass/**/*.scss')
 					.pipe(sass().on('error', sass.logError))
@@ -22,7 +27,7 @@ gulp.task('js', function() {
 /**
  * Tasks for generating preview of index.html
  */
-gulp.task('create-preview', ['sass', 'js'], function () {
+gulp.task('create-preview', ['sass', 'js', 'copy'], function () {
 	return gulp.src('./public/index.html')
 					.pipe(webshot({
 						dest:'public',
