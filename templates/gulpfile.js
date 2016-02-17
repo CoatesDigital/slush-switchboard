@@ -80,7 +80,8 @@ gulp.task('watch', function() {
 		'./public/**/*.*',
 		'!./public/css/**/*.*',
 		'!./public/js/**/*.*',
-		'!./public/preview.png'
+		'!./public/preview.png',
+		'!./public/dev/**/*.*',
 	], ['build']);
 });
 
