@@ -85,4 +85,5 @@ gulp.task('watch', function() {
 	], ['build']);
 });
 
+gulp.task('no-server', ['build', 'watch']);
 gulp.task('default', ['build', 'watch', 'serve']);
