@@ -72,7 +72,7 @@ gulp.task('default', function (done) {
         default: defaults.contentWidth
     }, {
         name: 'contentHeight',
-        message: 'What is the content width?',
+        message: 'What is the content height?',
         default: defaults.contentHeight
     }, {
       	name: 'zipFilename',
