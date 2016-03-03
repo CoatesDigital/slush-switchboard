@@ -80,7 +80,8 @@ gulp.task('default', function (done) {
 	message: 'What is the content type?',
 	default: defaults.contentType,
 	choices: [
-		'basic', 'rotator'
+		{ name: 'Basic', value: 'basic' },
+		{ name: 'Rotator', value: 'rotator' }
 	]
     }, {
       	name: 'zipFilename',
