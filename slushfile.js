@@ -49,7 +49,8 @@ var defaults = (function () {
         authorEmail: user.email || '',
 	      zipFilename: workingDirName + '.zip',
         contentWidth: 1920,
-        contentHeight: 1080
+        contentHeight: 1080,
+	contentType: 'basic'
     };
 })();
 
@@ -75,6 +76,13 @@ gulp.task('default', function (done) {
         message: 'What is the content height?',
         default: defaults.contentHeight
     }, {
+	name: 'contentType',
+	message: 'What is the content type?',
+	default: defaults.contentType,
+	choices: [
+		'basic', 'rotator'
+	]
+    }, {
       	name: 'zipFilename',
       	message: 'What is the name of the zip file?',
       	default: defaults.zipFilename
@@ -90,7 +98,7 @@ gulp.task('default', function (done) {
                 return done();
             }
             answers.appNameSlug = _.slugify(answers.appName);
-            gulp.src(__dirname + '/templates/**')
+            gulp.src(__dirname + '/' + answers.contentType + '/templates/**')
                 .pipe(template(answers))
                 .pipe(rename(function (file) {
 		    if (file.extname != '.scss' && file.basename[0] === '_') {
