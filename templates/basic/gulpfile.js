@@ -46,7 +46,7 @@ gulp.task('start-preview', ['rename-preview'], function () {
  */
 gulp.task('build', ['zip']);
 gulp.task('zip', ['start-preview'], function () {
-	gulp.src(['./**/*', '!./node_modules', '!./sass', '!./csv'])
+	gulp.src(['./**/*', '!./node_modules', '!./sass', '!./csv', '!./**/*.zip'])
 		    .pipe(zip('<%= zipFilename %>'))
 		    .pipe(gulp.dest('./'));
 });
