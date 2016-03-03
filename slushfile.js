@@ -78,7 +78,6 @@ gulp.task('default', function (done) {
     }, {
 	name: 'contentType',
 	message: 'What is the content type?',
-	default: defaults.contentType,
 	choices: [
 		{ name: 'Basic', value: 'basic' },
 		{ name: 'Rotator', value: 'rotator' }
