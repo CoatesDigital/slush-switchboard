@@ -100,7 +100,7 @@ gulp.task('default', function (done) {
                 return done();
             }
             answers.appNameSlug = _.slugify(answers.appName);
-            gulp.src(__dirname + '/' + answers.contentType + '/templates/**')
+            gulp.src(__dirname + '/templates/' + answers.contentType + '/**')
                 .pipe(template(answers))
                 .pipe(rename(function (file) {
 		    if (file.extname != '.scss' && file.basename[0] === '_') {
