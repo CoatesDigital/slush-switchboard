@@ -76,8 +76,10 @@ gulp.task('default', function (done) {
         message: 'What is the content height?',
         default: defaults.contentHeight
     }, {
+	type: 'list',
 	name: 'contentType',
 	message: 'What is the content type?',
+	default: defaults.contentType,
 	choices: [
 		{ name: 'Basic', value: 'basic' },
 		{ name: 'Rotator', value: 'rotator' }
