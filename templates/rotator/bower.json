@@ -1,7 +1,12 @@
 {
-	"name": "Content Skeleton",
-	"authors": ["Shannon Archer <shannon.archer@coatesdigital.com.au>"],
-	"dependencies": {
-		"content-framework": "git@github.com:CoatesDigital/content-framework.git#master"
-	}
+  "name": "Content Skeleton",
+  "authors": [
+    "Shannon Archer <shannon.archer@coatesdigital.com.au>"
+  ],
+  "dependencies": {
+    "content-framework": "git@github.com:CoatesDigital/content-framework.git#master",
+    "rivets": "^0.8.1",
+    "jquery": "^2.2.1",
+    "jquery.transit": "^0.9.12"
+  }
 }
