@@ -20,8 +20,8 @@ gulp.task('sass', function() {
 gulp.task('create-preview', ['sass'], function () {
 	return gulp.src('./index.html')
 					.pipe(webshot({
-						dest:'',
-						root:'',
+						dest:'./',
+						root:'./',
 						defaultWhiteBackground: true,
 						screenSize: {
 							width:<%= contentWidth %>,
