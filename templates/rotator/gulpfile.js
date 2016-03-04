@@ -20,8 +20,8 @@ gulp.task('sass', function() {
 gulp.task('create-preview', ['sass'], function () {
 	return gulp.src('./index.html')
 					.pipe(webshot({
-						dest:'',
-						root:'',
+						dest:'./',
+						root:'./',
 						defaultWhiteBackground: true,
 						screenSize: {
 							width:<%= contentWidth %>,
@@ -46,7 +46,13 @@ gulp.task('start-preview', ['rename-preview'], function () {
  */
 gulp.task('build', ['zip']);
 gulp.task('zip', ['start-preview'], function () {
-	gulp.src(['./**/*', '!./node_modules', '!./sass', '!./csv'])
+	gulp.src([
+					'./**/*',
+					'!./node_modules/',
+					'!./sass/',
+					'!./csv/',
+					'!./**/*.zip'
+				])
 		    .pipe(zip('<%= zipFilename %>'))
 		    .pipe(gulp.dest('./'));
 });
@@ -58,7 +64,8 @@ gulp.task('serve', function () {
 
 	gulp.watch([
 		"./**/*.html",
-		"./**/*.js"
+		"./**/*.js",
+		"./**/*.css"
 	]).on('change', browserSync.reload);
 });
 
