@@ -1,13 +1,5 @@
 @charset "utf-8";
-
-// Override variables here.
-// See the README for information about the available variables.
-
-@import "lib/mixins/general";
-@import "lib/mixins/responsive";
 @import "lib/partials/reset";
-@import "lib/partials/general";
-@import "lib/partials/grid";
-@import "lib/partials/content";
 
+// Your partials
 @import "app/layout";

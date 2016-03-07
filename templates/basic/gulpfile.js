@@ -10,7 +10,7 @@ var browserSync = require('browser-sync').create();
 gulp.task('sass', function() {
 	return gulp.src('./sass/**/*.scss')
 					.pipe(sass().on('error', sass.logError))
-					.pipe(gulp.dest('./public/css'))
+					.pipe(gulp.dest('./css'))
 					.pipe(browserSync.stream());
 });
 
@@ -48,9 +48,9 @@ gulp.task('build', ['zip']);
 gulp.task('zip', ['start-preview'], function () {
 	gulp.src([
 					'./**/*',
-					'!./node_modules/',
-					'!./sass/',
-					'!./csv/',
+					'!./node_modules/**/*',
+					'!./sass/**/*',
+					'!./csv/**/*',
 					'!./**/*.zip'
 				])
 		    .pipe(zip('<%= zipFilename %>'))
@@ -76,7 +76,8 @@ gulp.task('watch', function() {
 		'./**/*.*',
 		'!./css/**/*.*',
 		'!./js/**/*.*',
-		'!./preview.png'
+		'!./preview.png',
+		'!./**/*.zip'
 	], ['build']);
 });
 
