@@ -6,41 +6,46 @@
 		this.parent = parent;
 
   	// filter rotator data
-		this.data = filter(data);
+		this.data = { items: filter(data) };
 
     // add html
     addTemplate(parent);
 		rivets.bind(parent, this.data);
 
     // set initial state
-    var frames = parent.find('.frame');
-    frames.map(function (f) {
-      transition[f.dataset.transition + 'Initial'](f);
-      deactivateFrame(f.find('iframe'));
+    window.requestAnimationFrame(function () {
+      var frames = parent.find('.frame');
+      frames.map(function (i, f) {
+        Rotator.transition[f.dataset.transition + 'Initial'](f);
+        deactivateFrame($(f).find('iframe')[0]);
+      });
     });
   };
 
   Rotator.run = function () {
     var cycle = 0;
 
-		var frames = parent.find('.frame');
+		var frames = Rotator.parent.find('.frame');
 		var timeline = new SB.Timeline();
+
+    if (!frames || frames.length <= 0)
+      return;
 
 		frames[0].className += " base";
 
 		var current = 0;
-		frames.map(function (f) {
+		frames.map(function (i, f) {
 
 			timeline.addEvent(function (frame) {
 				return function () {
-
-					frames.map(function (f) {
-            transition[f.dataset.transition + 'Out'](f, f.dataset.transitionDuration, f.dataset.transitionDelay);
-            deactivateFrame(f.find('iframe'));
+					frames.map(function (i, f) {
+            Rotator.transition[f.dataset.transition + 'Out'](f, f.dataset.transitionDuration, f.dataset.transitionDelay);
+            deactivateFrame($(f).find('iframe')[0]);
 					});
 
-          transition[frame.dataset.transition + 'In'](frame, frame.dataset.transitionDuration, frame.dataset.transitionDelay);
-          activateFrame(frame.find('iframe'));
+          Rotator.transition[frame.dataset.transition + 'In'](frame, frame.dataset.transitionDuration, frame.dataset.transitionDelay);
+          activateFrame($(frame).find('iframe')[0]);
+
 				};
 			}(f), current);
 
@@ -118,6 +123,8 @@
 
     data.map(function (m) {
       if (m.Active) {
+        m.Active = false;
+        m.Content = '/content/' + m.Content + '/';
         m.TransitionDuration = m['Transition Duration'];
         m.TransitionDelay    = m['Transition Delay'];
         active.push(m);
@@ -126,4 +133,6 @@
 
     return active;
   };
+
+  window.Rotator = Rotator;
 })(window.Rotator || {});

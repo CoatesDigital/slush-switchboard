@@ -5,14 +5,14 @@
 
 	function init() {
 		// get '*-Playlist.csv'
-		var allData = SB.Data();
+		var allData = SB.Data.get();
 		for (var ds in allData) {
 			if (ds.toLowerCase().indexOf('playlist.csv') > 0)
 				playlist = allData[ds];
 		}
 
 		// Do rotator stuff
-		Rotator.build($('.rotator'), playlist);
+		Rotator.build($('.content'), playlist);
 		Rotator.run();
 	}
 
