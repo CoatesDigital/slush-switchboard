@@ -39,11 +39,13 @@
 			timeline.addEvent(function (frame) {
 				return function () {
 					frames.map(function (i, f) {
-            Rotator.transition[f.dataset.transition + 'Out'](f, f.dataset.transitionDuration, f.dataset.transitionDelay);
-            deactivateFrame($(f).find('iframe')[0]);
+            if (f != frame) {
+              Rotator.transition[f.dataset.transition + 'Out'](f, f.dataset.transitionDuration * 1000, f.dataset.transitionDelay * 1000);
+              deactivateFrame($(f).find('iframe')[0]);
+            }
 					});
 
-          Rotator.transition[frame.dataset.transition + 'In'](frame, frame.dataset.transitionDuration, frame.dataset.transitionDelay);
+          Rotator.transition[frame.dataset.transition + 'In'](frame, frame.dataset.transitionDuration * 1000, frame.dataset.transitionDelay * 1000);
           activateFrame($(frame).find('iframe')[0]);
 
 				};
@@ -59,13 +61,13 @@
   // activate the frame being called
   var activateFrame = function (frame) {
     if (frame.contentWindow.activate)
-      frame.contentWindow.activate()
+      frame.contentWindow.activate();
   };
 
   // deactivate the frame being called
   var deactivateFrame = function (frame) {
     if (frame.contentWindow.deactivate)
-      frame.contentWindow.deactivate()
+      frame.contentWindow.deactivate();
   };
 
   // add rivets template to html
@@ -87,28 +89,28 @@
    */
   Rotator.transition = {
     'noneIn': function (elem, duration, delay) {
-      $(elem).delay(delay).show();
+      $(elem).delay(delay).show(0);
     },
     'noneOut': function (elem, duration, delay) {
-      $(elem).delay(delay).hide();
+      $(elem).delay(delay).hide(0);
     },
     'noneInitial': function (elem) {
       Rotator.transition.noneOut(elem, 0, 0);
     },
     'fadeIn': function (elem, duration, delay) {
-      $(elem).show().delay(delay).transition({ opacity: 1 }, duration);
+      $(elem).show(0).delay(delay).transition({ opacity: 1 }, duration);
     },
     'fadeOut': function (elem, duration, delay) {
-      $(elem).delay(delay).transition({ opacity: 0 }, duration).delay(duration).hide();
+      $(elem).delay(delay).transition({ opacity: 0 }, duration).delay(duration).hide(0);
     },
     'fadeInitial': function (elem) {
       Rotator.transition.fadeOut(elem, 0, 0);
     },
     'slidedownIn': function (elem, duration, delay) {
-      $(elem).show().delay(delay).transition({ y: 0 }, duration);
+      $(elem).show(0).delay(delay).transition({ y: 0 }, duration);
     },
     'slidedownOut': function (elem, duration, delay) {
-      $(elem).delay(delay).transition({ y: -$(elem).height() }, duration).delay(duration).hide();
+      $(elem).delay(delay).transition({ y: -$(elem).height() }, duration).delay(duration).hide(0);
     },
     'slidedownInitial': function (elem) {
       Rotator.transition.slidedownOut(elem, 0, 0);

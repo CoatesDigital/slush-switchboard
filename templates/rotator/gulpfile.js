@@ -48,9 +48,9 @@ gulp.task('build', ['zip']);
 gulp.task('zip', ['start-preview'], function () {
 	gulp.src([
 					'./**/*',
-					'!./node_modules/',
-					'!./sass/',
-					'!./csv/',
+					'!./node_modules/**/*',
+					'!./sass/**/*',
+					'!./csv/**/*',
 					'!./**/*.zip'
 				])
 		    .pipe(zip('<%= zipFilename %>'))
@@ -75,8 +75,9 @@ gulp.task('watch', function() {
 	gulp.watch([
 		'./**/*.*',
 		'!./css/**/*.*',
-		'!./js/**/*.*',
-		'!./preview.png'
+		'!./preview.png',
+		'!./index.png',
+		'!./**/*.zip'
 	], ['build']);
 });
 
