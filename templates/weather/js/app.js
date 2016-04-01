@@ -1,25 +1,26 @@
 // Configure Switchboard
 (function () {
 
-	var playlist = [];
+	var content = [], config = [];
+	var location = 0, units = 0;
 
 	function init() {
-		// get '*-Playlist.csv'
-		var allData = SB.Data.get();
-		for (var ds in allData) {
-			if (ds.toLowerCase().indexOf('playlist.csv') > 0)
-				playlist = allData[ds];
-		}
+		content = SB.Data.like('content.csv').single();
+		config = SB.Data.like('config.csv').single()[0];
+
+		location = config.Location;
+		units = config.Units;
 
 		// Do rotator stuff
-		Rotator.build($('.content'), playlist);
-		Rotator.run();
+		Weather.build($('.content'), playlist);
+		Weather.run(location, units, function (weather) { console.log(weather); });
 	}
 
 	SB.setup({
 		url: 'http://xxxx.coatesdigital.com.au/',
 		sources: [
-			'sample-playlist.csv'
+			'sample-config.csv',
+			'sample-content.csv'
 		],
 		success: init
 	});

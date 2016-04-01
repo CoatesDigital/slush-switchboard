@@ -7,6 +7,7 @@
     "content-framework": "git@github.com:CoatesDigital/content-framework.git#master",
     "rivets": "^0.8.1",
     "jquery": "^2.2.1",
-    "jquery.transit": "^0.9.12"
+    "jquery.transit": "^0.9.12",
+    "simpleWeather": "^3.1.0"
   }
 }

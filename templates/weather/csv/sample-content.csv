@@ -1,0 +1,4 @@
+Content{editor:dropdown;content-dependency:true;},Minimum Temperature{editor:text},Active{editor:checkbox}
+,10,1
+,20,1
+,30,1
