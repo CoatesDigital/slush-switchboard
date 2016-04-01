@@ -1,0 +1,4 @@
+Content{editor:dropdown;content-dependency:true;},Duration{editor:text},Transition{editor:dropdown;editor-options:none|fade|slidedown;},Transition Duration{editor:text},Transition Delay{editor:text},Active{editor:checkbox}
+content1.zip,10,fade,1,0,1
+content2.zip,10,fade,1,0,1
+takeover.zip,10,none,1,0,1

@@ -1,0 +1,13 @@
+$mq-medium: 460px !default;
+$mq-large: 768px !default;
+$mq-x-large: 1024px !default;
+
+@mixin mq($min) {
+	@media screen and (min-width: $min) {
+		@content;
+	}
+}
+
+@mixin mq-medium { @include mq($mq-medium) { @content; } }
+@mixin mq-large { @include mq($mq-large) { @content; } }
+@mixin mq-x-large { @include mq($mq-x-large) { @content; } }

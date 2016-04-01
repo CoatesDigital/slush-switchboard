@@ -1,0 +1,13 @@
+// Start your application CSS here.
+html, body {
+  width:<%= contentWidth %>px;
+  height:<%= contentHeight %>px;
+  overflow:hidden;
+}
+
+.content {
+  width:<%= contentWidth %>px;
+  height:<%= contentHeight %>px;
+  overflow:hidden;
+  background:#000;
+}

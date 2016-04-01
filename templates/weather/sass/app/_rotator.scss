@@ -1,0 +1,8 @@
+.rotator, .frame, .frame iframe {
+  position:absolute;
+  width:<%= contentWidth %>px;
+  height:<%= contentHeight %>px;
+  overflow:hidden;
+  display:block;
+  border:none;
+}
