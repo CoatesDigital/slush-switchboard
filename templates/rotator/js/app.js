@@ -4,13 +4,8 @@
 	var playlist = [];
 
 	function init() {
-		// get '*-Playlist.csv'
-		var allData = SB.Data.get();
-		for (var ds in allData) {
-			if (ds.toLowerCase().indexOf('playlist.csv') > 0)
-				playlist = allData[ds];
-		}
-
+		playlist = SB.Data.like('playlist.csv').single();
+		
 		// Do rotator stuff
 		Rotator.build($('.content'), playlist);
 		Rotator.run();
