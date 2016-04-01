@@ -82,7 +82,8 @@ gulp.task('default', function (done) {
 	default: defaults.contentType,
 	choices: [
 		{ name: 'Basic', value: 'basic' },
-		{ name: 'Rotator', value: 'rotator' }
+		{ name: 'Rotator', value: 'rotator' },
+		{ name: 'Weather', value: 'weather' }
 	]
     }, {
       	name: 'zipFilename',
